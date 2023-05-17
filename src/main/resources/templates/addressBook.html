@@ -14,22 +14,24 @@
     <form data-th-action="@{/contact}" data-th-object="${contact}" method="post">
         <p>
             Name:
-            <input type="text" data-th-field="*{name}" />          
+            <input type="text" data-th-field="*{name}" />
+            <span style="color: red;" class="error" data-th-if="${#fields.hasErrors('name')}" data-th-errors="*{name}"></span>          
         </p>
-        <span style="color: red;" class="error" data-th-if="${#fields.hasErrors('name')}" data-th-errors="*{name}"></span>
         <p>
             E-mail:
             <input type="text" data-th-field="*{email}" />
+            <span style="color: red;" class="error" data-th-if="${#fields.hasErrors('email')}" data-th-errors="*{email}"></span>
         </p>
-        <span style="color: red;" class="error" data-th-if="${#fields.hasErrors('email')}" data-th-errors="*{email}"></span>
         <p>
             Phone Number:
             <input type="text" data-th-field="*{phoneNumber}" />
+            <span style="color: red;" class="error" data-th-if="${#fields.hasErrors('phoneNumber')}" data-th-errors="*{phoneNumber}"></span>
         </p>
-        <span style="color: red;" class="error" data-th-if="${#fields.hasErrors('phoneNumber')}" data-th-errors="*{phoneNumber}"></span>
+
         <div data-th-if="${#fields.hasErrors('global')}">
             <p data-th-each="err: ${#fields.errors('global')}" data-th-text="${err}" class="error" style="color: red;"></p>
         </div>
+        
         <p>
             <input type="submit" value="Save" />
         </p>
