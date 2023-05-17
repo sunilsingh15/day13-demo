@@ -27,6 +27,9 @@
             <input type="text" data-th-field="*{phoneNumber}" />
         </p>
         <span style="color: red;" class="error" data-th-if="${#fields.hasErrors('phoneNumber')}" data-th-errors="*{phoneNumber}"></span>
+        <div data-th-if="${#fields.hasErrors('global')}">
+            <p data-th-each="err: ${#fields.errors('global')}" data-th-text="${err}" class="error" style="color: red;"></p>
+        </div>
         <p>
             <input type="submit" value="Save" />
         </p>
