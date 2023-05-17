@@ -16,17 +16,17 @@
             Name:
             <input type="text" data-th-field="*{name}" />          
         </p>
-
+        <span style="color: red;" class="error" data-th-if="${#fields.hasErrors('name')}" data-th-errors="*{name}"></span>
         <p>
             E-mail:
             <input type="text" data-th-field="*{email}" />
         </p>
-
+        <span style="color: red;" class="error" data-th-if="${#fields.hasErrors('email')}" data-th-errors="*{email}"></span>
         <p>
             Phone Number:
             <input type="text" data-th-field="*{phoneNumber}" />
         </p>
-
+        <span style="color: red;" class="error" data-th-if="${#fields.hasErrors('phoneNumber')}" data-th-errors="*{phoneNumber}"></span>
         <p>
             <input type="submit" value="Save" />
         </p>

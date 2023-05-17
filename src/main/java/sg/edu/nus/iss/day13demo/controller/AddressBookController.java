@@ -33,7 +33,9 @@ public class AddressBookController {
         System.out.println("E-mail: " + contact.getEmail());
         System.out.println("Phone Number: " + contact.getPhoneNumber());
 
-        System.out.println(result.getAllErrors());
+        if (result.hasErrors()) {
+            return "addressBook";
+        }
 
         return "addressBook";
     }
